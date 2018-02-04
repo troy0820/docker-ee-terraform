@@ -1,8 +1,16 @@
+resource "null_resource" "is_ready" {
+  triggers {
+    is_ready = "${var.is_ready}"
+  }
+}
+
 data "template_file" init {
   template      = "${file("${path.module}/scripts/user-data.tpl")}"
 }
 
 resource "aws_instance" "docker-beta"{
+  depends_on    = ["null_resource.is_ready"]
+
   count         = 3
   ami	        = "${var.ami}"
   instance_type = "t2.medium"
@@ -16,4 +24,9 @@ tags {
  }
 
   user_data 	= "${data.template_file.init.rendered}"
+}
+
+resource "null_resource" "is_complete" {
+  depends_on = ["null_resource.is_ready",
+	"aws_instance.docker-beta"]
 }

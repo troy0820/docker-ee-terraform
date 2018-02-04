@@ -5,3 +5,7 @@ output "user_data" {
 output "ssh_ip_address" {
   value = "${aws_instance.docker-beta.*.public_ip}"
 }
+
+output "is_complete" {
+  value = "${null_resource.is_complete.id}"
+}

@@ -1,3 +1,8 @@
+variable "is_ready" {
+  description = "When populated the module will be started."
+  type        = "string"
+}
+
 variable "key_name" {
   description = "ssh key_name pair for instance connection"
   type 	      = "string"

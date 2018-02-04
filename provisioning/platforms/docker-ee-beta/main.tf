@@ -12,6 +12,7 @@ provider "aws" {
 module "docker-ee-beta" {
   source = "../../modules/docker-ee-beta"
 
+  is_ready      = true
   ami	        = "${var.ami}"
   key_name      = "${var.key_name}"
   subnet_id     = "${var.subnet_id}"
