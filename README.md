@@ -12,4 +12,6 @@ _What is not included with this repo:_
 - Kube.yml
 ```
 
+## How do we deploy Docker-EE-Beta
 
+You will need a file called `main.tfvars` store in your config directory.
