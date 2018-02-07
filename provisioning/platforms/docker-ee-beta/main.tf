@@ -22,3 +22,5 @@ module "docker-ee-beta" {
   name 		= "${var.name}"
 
 }
+
+
