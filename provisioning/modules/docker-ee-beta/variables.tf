@@ -34,3 +34,7 @@ variable "ami" {
   type 	      = "string"
 }
 
+variable "count" {
+  description = "The count of instances for docker-ee-beta"
+  type 	      = "string"
+}

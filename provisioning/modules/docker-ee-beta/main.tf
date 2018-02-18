@@ -11,7 +11,7 @@ data "template_file" init {
 resource "aws_instance" "docker-beta"{
   depends_on    = ["null_resource.is_ready"]
 
-  count         = 3
+  count         = "${var.count}"
   ami	        = "${var.ami}"
   instance_type = "t2.medium"
   key_name      = "${var.key_name}"

@@ -12,6 +12,7 @@ module "docker-ee-beta" {
   source = "../../modules/docker-ee-beta"
 
   is_ready  = true
+  count     = "${var.count}"
   ami       = "${var.ami}"
   key_name  = "${var.key_name}"
   subnet_id = "${var.subnet_id}"
