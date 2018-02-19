@@ -4,16 +4,22 @@ resource "null_resource" "is_ready" {
   }
 }
 
+#########################################################
+# Template file with user-data script
+#########################################################
 data "template_file" init {
   template      = "${file("${path.module}/scripts/user-data.tpl")}"
 }
 
+########################################################
+# AWS EC2 instance for each docker-ee-beta node
+########################################################
 resource "aws_instance" "docker-beta"{
   depends_on    = ["null_resource.is_ready"]
 
   count         = "${var.count}"
   ami	        = "${var.ami}"
-  instance_type = "t2.medium"
+  instance_type = "${var.instance_type}"
   key_name      = "${var.key_name}"
   subnet_id     = "${var.subnet_id}"
 

@@ -38,3 +38,9 @@ variable "count" {
   description = "The count of instances for docker-ee-beta"
   type 	      = "string"
 }
+
+variable "instance_type" {
+  description = "Instance size of node"
+  type        = "string"
+  default     = "t2.medium"
+}
