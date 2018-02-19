@@ -1,8 +1,9 @@
 resource "null_resource" "is_ready" {
   triggers {
-   is_ready = "${var.is_ready}"
+    is_ready = "${var.is_ready}"
   }
 }
+
 #########################################################
 # Random ID generator for uniq hash
 ##########################################################
@@ -18,7 +19,7 @@ resource "aws_s3_bucket" "terraform-state-bucket" {
   bucket     = "${var.s3_bucket}-${random_id.s3-bucket.hex}"
 
   versioning {
-    enabled   = true
+    enabled = true
   }
 
   lifecycle {
@@ -26,7 +27,7 @@ resource "aws_s3_bucket" "terraform-state-bucket" {
   }
 
   tags {
-    Name       = "${var.s3_tags}"
+    Name = "${var.s3_tags}"
   }
 }
 
@@ -34,19 +35,19 @@ resource "aws_s3_bucket" "terraform-state-bucket" {
 # Dynamo DB table for locking state
 ############################################################
 resource "aws_dynamodb_table" "dynamodb-tf-state-lock" {
-  depends_on = ["null_resource.is_ready"]
-  name 	     = "${var.dynamo_name}"
-  hash_key   = "LockID"
-  read_capacity = 5
+  depends_on     = ["null_resource.is_ready"]
+  name           = "${var.dynamo_name}"
+  hash_key       = "LockID"
+  read_capacity  = 5
   write_capacity = 5
 
   attribute {
     name = "LockID"
     type = "S"
-   }
+  }
 
   tags {
-    Name   = "${var.dynamo_tags}"
+    Name = "${var.dynamo_tags}"
   }
 }
 

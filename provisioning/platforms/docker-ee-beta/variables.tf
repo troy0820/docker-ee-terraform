@@ -45,6 +45,6 @@ variable "count" {
 
 variable "instance_type" {
   description = "Instance size of node"
-  type 	      = "string"
+  type        = "string"
   default     = "t2.medium"
 }

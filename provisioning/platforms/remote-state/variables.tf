@@ -7,6 +7,7 @@ variable "s3_tags" {
   description = "Tags for Dynamo table"
   type        = "string"
 }
+
 variable "dynamo_name" {
   description = "Tags for Dynamo table"
   type        = "string"
