@@ -12,4 +12,4 @@
 - Script to install Docker EE on Ubuntu 16.04 for user data in the provisioning/modules/docker-ee-beta/scripts folder
 ```
 
-
+For more information, see the documenation in [docs/](../../docs/DEPLOY.md)
