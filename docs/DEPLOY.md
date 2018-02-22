@@ -22,5 +22,7 @@ terraform plan -var-file="../../config/${whatever your config file is named}"
 After there are no errors, you can then apply this environment to AWS.
 
 ```bash
-terraform apply -var-file="../../config/${whatever your config fle is named}"
+terraform apply -var-file="../../config/${whatever your config fle is named}" -auto-approve
 ```
+
+_auto-approve_ flag will allow you to not have to enter _yes_ when spinning up the platform.
