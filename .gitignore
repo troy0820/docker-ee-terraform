@@ -1,5 +1,5 @@
 .terraform
-main.tfvars
+*.tfvars
 .DS_Store
 *.tfstate
 *.tfstate.*
