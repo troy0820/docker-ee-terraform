@@ -27,7 +27,10 @@ resource "aws_s3_bucket" "terraform-state-bucket" {
   }
 
   tags {
-    Name = "${var.s3_tags}"
+    Name           = "${var.name}"
+    Description    = "${var.s3_tags}"
+    Purpose        = "${var.purpose}"
+    Owner          = "${var.owner}"
   }
 }
 
@@ -47,7 +50,11 @@ resource "aws_dynamodb_table" "dynamodb-tf-state-lock" {
   }
 
   tags {
-    Name = "${var.dynamo_tags}"
+
+    Description    = "${var.dynamo_tags}"
+    Name           = "${var.name}"
+    Purpose        = "${var.purpose}"
+    Owner          = "${var.owner}"
   }
 }
 

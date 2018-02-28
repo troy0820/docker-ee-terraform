@@ -16,4 +16,7 @@ module "aws-remote-state" {
   s3_tags     = "${var.s3_tags}"
   dynamo_name = "${var.dynamo_name}"
   dynamo_tags = "${var.dynamo_tags}"
+  name        = "${var.name}"
+  purpose     = "${var.purpose}"
+  owner       = "${var.owner}"
 }

@@ -22,3 +22,19 @@ variable "dynamo_tags" {
   description = "Tags for Dynamo table"
   type        = "string"
 }
+variable "owner" {
+  description = "Owner Tag in tags"
+  type        = "string"
+}
+
+variable "purpose" {
+  description = "Purpose tag in tags"
+  type        = "string"
+}
+
+variable "name" {
+  description = "Name tag in tags"
+  type        = "string"
+}
+
+
