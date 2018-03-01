@@ -2,6 +2,8 @@
 
 To deploy this environment you will need to have a file in your config directory.  You will be in the `platforms/${environment}` directory when deploying this environment.
 
+If you want to use remote state, **YOU must deploy this first**.  If you don't want to use remote state remove the line `backend "s3" {}` from the docker-ee-beta platform.
+
 First you choose your workspace
 ```bash
 terraform workspace new ${whatever you want to call it}
