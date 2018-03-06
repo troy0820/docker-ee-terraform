@@ -43,3 +43,8 @@ variable "instance_type" {
   type        = "string"
   default     = "t2.medium"
 }
+
+variable "docker_key" {
+  description = "Docker EE key"
+  type        = "string"
+}

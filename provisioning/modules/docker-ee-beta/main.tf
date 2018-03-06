@@ -9,6 +9,10 @@ resource "null_resource" "is_ready" {
 #########################################################
 data "template_file" init {
   template = "${file("${path.module}/scripts/user-data.tpl")}"
+
+  vars {
+    docker_key = "${var.docker_key}"
+  }
 }
 
 ########################################################
