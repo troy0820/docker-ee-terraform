@@ -18,7 +18,7 @@ data "template_file" init {
 ########################################################
 # AWS EC2 instance for each docker-ee-beta node
 ########################################################
-resource "aws_instance" "docker-beta" {
+resource "aws_instance" "troy.connor-docker-beta-ee" {
   depends_on = ["null_resource.is_ready"]
 
   count         = "${var.count}"
