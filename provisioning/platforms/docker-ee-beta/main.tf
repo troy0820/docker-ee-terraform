@@ -20,9 +20,9 @@ resource "aws_vpc" "docker-ee-beta" {
   cidr_block = "10.0.0.0/16"
 
   tags {
-    name    = "${var.name}"
-    purpose = "${var.purpose}"
-    owner   = "${var.owner}"
+    Name    = "${var.name}"
+    Purpose = "${var.purpose}"
+    Owner   = "${var.owner}"
   }
 }
 
@@ -32,9 +32,9 @@ resource "aws_subnet" "docker-ee-beta" {
   cidr_block = "10.0.0.0/16"
 
   tags {
-    name    = "${var.name}"
-    purpose = "${var.purpose}"
-    owner   = "${var.owner}"
+    Name    = "${var.name}"
+    Purpose = "${var.purpose}"
+    Owner   = "${var.owner}"
   }
 }
 
