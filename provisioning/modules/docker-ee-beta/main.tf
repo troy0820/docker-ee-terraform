@@ -21,11 +21,12 @@ data "template_file" init {
 resource "aws_instance" "troy-connor-docker-beta-ee" {
   depends_on = ["null_resource.is_ready"]
 
-  count         = "${var.count}"
-  ami           = "${var.ami}"
-  instance_type = "${var.instance_type}"
-  key_name      = "${var.key_name}"
-  subnet_id     = "${var.subnet_id}"
+  count                       = "${var.count}"
+  ami                         = "${var.ami}"
+  instance_type               = "${var.instance_type}"
+  key_name                    = "${var.key_name}"
+  subnet_id                   = "${var.subnet_id}"
+  associate_public_ip_address = true
 
   tags {
     Owner   = "${var.owner}"
