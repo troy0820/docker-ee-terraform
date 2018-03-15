@@ -8,11 +8,6 @@ variable "key_name" {
   type        = "string"
 }
 
-variable "subnet_id" {
-  description = "subnet Id for the vpc I'm using"
-  type        = "string"
-}
-
 variable "owner" {
   description = "Owner Tag in tags"
   type        = "string"

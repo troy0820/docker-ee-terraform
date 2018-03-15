@@ -3,11 +3,6 @@ variable "key_name" {
   type        = "string"
 }
 
-variable "subnet_id" {
-  description = "subnet Id for the vpc I'm using"
-  type        = "string"
-}
-
 variable "profile" {
   description = "AWS Profile to use when deploying"
   type        = "string"
