@@ -22,7 +22,7 @@ data "template_file" init {
 
 resource "aws_vpc" "docker-ee-beta" {
   depends_on = ["null_resource.is_ready"]
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "${var.cidr_block}"
 
   tags {
     Name    = "${var.name}"
@@ -38,7 +38,7 @@ resource "aws_vpc" "docker-ee-beta" {
 resource "aws_subnet" "docker-ee-beta" {
   depends_on = ["aws_vpc.docker-ee-beta"]
   vpc_id     = "${aws_vpc.docker-ee-beta.id}"
-  cidr_block = "10.0.0.0/16"
+  cidr_block = "${var.cidr_block}"
 
   tags {
     Name    = "${var.name}"

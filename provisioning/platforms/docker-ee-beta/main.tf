@@ -14,6 +14,7 @@ module "docker-ee-beta" {
 
   is_ready   = true
   docker_key = "${var.docker_key}"
+  cidr_block = "${var.cidr_block}"
   count      = "${var.count}"
   ami        = "${var.ami}"
   key_name   = "${var.key_name}"

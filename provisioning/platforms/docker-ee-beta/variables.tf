@@ -48,3 +48,8 @@ variable "docker_key" {
   description = "Docker EE key"
   type        = "string"
 }
+
+variable "cidr_block" {
+  description = "CIDR block for subnet"
+  type        = "string"
+}
