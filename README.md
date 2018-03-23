@@ -9,7 +9,6 @@ _What is not included with this repo:_
 - terraform state
 - Docker EE script sent as user_data
 - Subscription license for Docker EE
-- Kube.yml
 ```
 
 ## How do we deploy Docker-EE-Beta
